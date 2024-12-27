@@ -77,14 +77,7 @@ const Login = () => {
     if(loginError){ 
       toast.error(loginError.data.message || "login Failed");
     }
-  }, [
-    loginIsLoading,
-    registerIsLoading,
-    loginData,
-    registerData,
-    loginError,
-    registerError,
-  ]);
+  }, [loginIsLoading, registerIsLoading, loginData, registerData, loginError, registerError, registerIsSuccess, loginIsSuccess]);
 
   return (
     <div className="flex items-center w-full justify-center mt-20">
@@ -120,7 +113,7 @@ const Login = () => {
                   name="email"
                   value={signupInput.email}
                   onChange={(e) => changeInputHandler(e, "signup")}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder="Eg. id@gmail.com"
                   required="true"
                 />
               </div>
@@ -158,7 +151,7 @@ const Login = () => {
             <CardHeader>
               <CardTitle>Login</CardTitle>
               <CardDescription>
-                Login your password here. After signup, you'll be logged in.
+                Login your password here. After signup, you,ll be logged in.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
